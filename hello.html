@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Hello Eric Bui</title>
     <!-- Link to Bootstrap CDN -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
     <style>
         body {
             padding: 20px;
@@ -20,16 +21,22 @@
             max-width: 100%;
             /* Đảm bảo container không vượt quá chiều rộng của body */
         }
+
+        .audiowide-regular {
+            font-family: "Audiowide", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="container bg-primary p-3" style="border-radius: 20px;">
-            <div class="text-white text-uppercase fw-bold" style="font-size: 30px;">Quickords</div>
+        <div class="container p-3" style="border-radius: 20px; background-color: #CC631F;">
+            <div class="text-white text-uppercase fw-bold audiowide-regular" style="font-size: 30px;">Quickords</div>
         </div>
         <p class="pt-3">Find your song's chords quickly by one click on the youtube title!</p>
-        <span class="text-align-left text-primary" style="font-size: 15px; font-weight: bold;">*Developed by 
+        <span class="text-align-left " style="font-size: 15px; font-weight: bold; color: #CC631F;">*Developed by 
             <a href="https://web.facebook.com/buinhuphuoc/" style="text-decoration: underline;">Eric Bui</a>
         </span>
     </div>
