@@ -79,12 +79,11 @@ function addButtonToVideoTitle() {
     button.innerText = 'Find ♫'; // Icon + text
 
     button.style.fontWeight = 'bold';
-    button.style.fontSize = '20px';
     button.style.marginLeft = '10px'; 
     button.style.padding = '8px 16px'; 
     button.style.fontSize = '14px'; 
     button.style.cursor = 'pointer'; 
-    button.style.backgroundColor = '#007bff'; 
+    button.style.backgroundColor = '#D5A96B'; 
     button.style.color = '#fff'; 
     button.style.border = 'none'; 
     button.style.borderRadius = '15px'; 
@@ -93,11 +92,11 @@ function addButtonToVideoTitle() {
 
     // Thêm hiệu ứng khi hover vào nút
     button.addEventListener('mouseover', function () {
-      button.style.backgroundColor = '#0056b3'; 
+      button.style.backgroundColor = '#CC631F'; 
     });
 
     button.addEventListener('mouseout', function () {
-      button.style.backgroundColor = '#007bff'; 
+      button.style.backgroundColor = '#D5A96B'; 
     });
 
 
