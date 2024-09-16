@@ -1,4 +1,4 @@
-// Lắng nghe thông điệp từ popup 
+// Lắng nghe thông điệp từ popup
 chrome.runtime.onMessage.addListener(async function (
   request,
   sender,
@@ -24,7 +24,7 @@ chrome.runtime.onMessage.addListener(async function (
     // Mở trang tìm kiếm trong tab mới
     window.open(searchUrl, "_blank");
   }
-}); 
+});
 
 function extractSongTitle(title) {
     // Loại bỏ phần sau dấu ngoặc () hoặc []
@@ -43,11 +43,11 @@ chrome.runtime.onMessage.addListener(async function (request, sender, sendRespon
           XPathResult.FIRST_ORDERED_NODE_TYPE,
           null
         );
-        
+
         // Lấy giá trị innerText của phần tử
         const element = xpathResult.singleNodeValue;
         const value = element ? element.innerText : null;
-        
+
         // Gửi giá trị trở lại popup
         sendResponse({ value: extractSongTitle(value) });
       } catch (error) {
@@ -76,27 +76,27 @@ function addButtonToVideoTitle() {
     // Tạo nút mới
     const button = document.createElement('button');
     button.id = 'my-custom-button';
-    button.innerText = 'Find ♫'; // Icon + text
-
+    // button.innerText = 'Find ♫'; // Icon + text
+    button.innerHTML = '<img src="https://github.com/nhuphuoc/find-guitar-chords/blob/dev/images/quickords_logo.png" alt="logo" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 8px;"> Find ♫'; // Image + Text
     button.style.fontWeight = 'bold';
-    button.style.marginLeft = '10px'; 
-    button.style.padding = '8px 16px'; 
-    button.style.fontSize = '14px'; 
-    button.style.cursor = 'pointer'; 
-    button.style.backgroundColor = '#D5A96B'; 
-    button.style.color = '#fff'; 
-    button.style.border = 'none'; 
-    button.style.borderRadius = '15px'; 
-    button.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)'; 
+    button.style.marginLeft = '10px';
+    button.style.padding = '8px 16px';
+    button.style.fontSize = '14px';
+    button.style.cursor = 'pointer';
+    button.style.backgroundColor = '#D5A96B';
+    button.style.color = '#fff';
+    button.style.border = 'none';
+    button.style.borderRadius = '15px';
+    button.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
     button.style.transition = 'background-color 0.3s ease';
 
     // Thêm hiệu ứng khi hover vào nút
     button.addEventListener('mouseover', function () {
-      button.style.backgroundColor = '#CC631F'; 
+      button.style.backgroundColor = '#CC631F';
     });
 
     button.addEventListener('mouseout', function () {
-      button.style.backgroundColor = '#D5A96B'; 
+      button.style.backgroundColor = '#D5A96B';
     });
 
 
@@ -109,14 +109,14 @@ function addButtonToVideoTitle() {
         XPathResult.FIRST_ORDERED_NODE_TYPE,
         null
       );
-  
+
       // Lấy giá trị innerText của phần tử
       const element = xpathResult.singleNodeValue;
       const value = element ? element.innerText : null;
       const searchQuery = extractSongTitle(value) + 'hopamchuan';
       const searchUrl =
         "https://hopamchuan.com/search?q=" + extractSongTitle(value);
-  
+
       // Mở trang tìm kiếm trong tab mới
       window.open(searchUrl, "_blank");
     });
